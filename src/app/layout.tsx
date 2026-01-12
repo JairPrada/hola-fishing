@@ -6,7 +6,7 @@ import { BookingProvider } from '@/components/booking/BookingProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Hola Fishing | Puerto Rico Fishing Charters - Unforgettable Experience',
+  title: 'Hola Fishing',
   description: 'Discover the best sport fishing experience in Puerto Rico with Hola Fishing. Custom fishing tours with expert captain, professional equipment, and local waters. Book your adventure today!',
   keywords: 'hola fishing, puerto rico fishing, fishing charters, sport fishing, deep sea fishing, fishing tours, fishing charters pr, puerto rico fishing trips',
   authors: [{ name: 'Hola Fishing Puerto Rico' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Hola Fishing | Puerto Rico Fishing Charters',
+    title: 'Hola Fishing',
     description: 'The best sport fishing experience in Puerto Rico. Local waters, expert knowledge, unforgettable adventures.',
     type: 'website',
     locale: 'en_US',
