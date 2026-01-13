@@ -155,7 +155,7 @@ function PhotoGallery() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:flex lg:flex-col gap-4 sm:gap-6 lg:h-full border">
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:flex lg:flex-col gap-4 sm:gap-6 lg:h-full">
       {photos.map((photo, index) => (
         <motion.div key={index} className="overflow-hidden lg:flex-1">
           <motion.img
