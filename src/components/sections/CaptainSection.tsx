@@ -22,7 +22,7 @@ export function CaptainSection() {
     <motion.section
       ref={ref}
       id="captain"
-      className="relative w-full bg-gray-50 bg-hero bg-cover bg-center bg-no-repeat pt-4 md:pt-8 pb-10"
+      className="relative w-full bg-gray-50 bg-hero bg-cover bg-center bg-no-repeat pt-4 md:pt-8 lg:pb-10 mb-5"
       initial={{ opacity: 0, y: 50 }}
       animate={shouldAnimate ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -53,7 +53,7 @@ export function CaptainSection() {
         {/* Galería de Fotos */}
         <div className="relative w-full lg:w-2/5">
           <motion.div
-            className="w-full absolute lg:-top-20"
+            className="w-full lg:absolute lg:-top-20"
             initial={{ opacity: 0, x: 50 }}
             animate={
               shouldAnimate ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }
@@ -72,7 +72,7 @@ export function CaptainSection() {
         transition={{ duration: 0.5, delay: 0.1 }}
       >
         <h1
-          className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-bold text-[#174866] mt-20"
+          className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-bold text-[#174866] mt-10 lg:mt-20"
           style={{ fontSize: "clamp(1.75rem, 2.2vw + 0.4rem, 3rem)" }}
         >
           ADVENTURE PACKAGES

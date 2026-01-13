@@ -32,7 +32,7 @@ export function Card({
   return (
     <motion.section
       ref={ref}
-      className={`${styles.background} grid grid-cols-1 md:grid-cols-6 w-full overflow-hidden md:max-h-[500px] lg:max-h-[500px] xl:max-h-[500px]`}
+      className={`${styles.background} grid grid-cols-1 md:grid-cols-6 w-full overflow-hidden md:max-h-[700px] lg:max-h-[700px] xl:max-h-[700px]`}
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
