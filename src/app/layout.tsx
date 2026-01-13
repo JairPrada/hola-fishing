@@ -6,6 +6,7 @@ import { BookingProvider } from '@/components/booking/BookingProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://holafishing.com'),
   title: 'Hola Fishing',
   description: 'Discover the best sport fishing experience in Puerto Rico with Hola Fishing. Custom fishing tours with expert captain, professional equipment, and local waters. Book your adventure today!',
   keywords: 'hola fishing, puerto rico fishing, fishing charters, sport fishing, deep sea fishing, fishing tours, fishing charters pr, puerto rico fishing trips',

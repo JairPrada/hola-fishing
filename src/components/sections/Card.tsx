@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 import { CircleDollarSign, Clock, Badge } from "lucide-react";
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 interface CardProps {
   variant?: "primary" | "secondary";
@@ -23,23 +23,23 @@ export function Card({
 }: CardProps) {
   const styles = getCardStyles(variant);
   const ref = useRef(null);
-  const isInView = useInView(ref, { 
-    once: true, 
+  const isInView = useInView(ref, {
+    once: true,
     margin: "-50px",
-    amount: 0.3 
+    amount: 0.3,
   });
 
   return (
-    <motion.section 
+    <motion.section
       ref={ref}
-      className={`${styles.background} grid grid-cols-1 md:grid-cols-6 w-full overflow-hidden`}
+      className={`${styles.background} grid grid-cols-1 md:grid-cols-6 w-full overflow-hidden md:max-h-[500px] lg:max-h-[500px] xl:max-h-[500px]`}
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      whileHover={{ 
+      whileHover={{
         scale: 1.02,
         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-        transition: { duration: 0.3 }
+        transition: { duration: 0.3 },
       }}
     >
       {/* Imagen del paquete */}
@@ -72,14 +72,16 @@ function CardImage({
   orderClass: string;
 }) {
   return (
-    <motion.div className={`${orderClass} col-span-1 md:col-span-2 overflow-hidden`}>
+    <motion.div
+      className={`${orderClass} col-span-1 md:col-span-2 overflow-hidden`}
+    >
       <motion.img
         src={imgPath}
         alt={`Paquete de pesca: ${title}`}
         className="h-64 xs:h-72 sm:h-80 md:h-full w-full object-cover"
         whileHover={{
           scale: 1.1,
-          transition: { duration: 0.4, ease: "easeOut" }
+          transition: { duration: 0.4, ease: "easeOut" },
         }}
       />
     </motion.div>
@@ -103,18 +105,34 @@ function CardContent({
 }) {
   return (
     <div
-      className={`${orderClass} relative col-span-1 md:col-span-4 overflow-hidden px-4 xs:px-6 sm:px-8 md:px-11 py-6 xs:py-8 sm:py-10`}
+      className={`${orderClass} relative col-span-1 md:col-span-4 overflow-hidden px-4 xs:px-6 sm:px-8 md:px-11 pt-6 xs:pt-8 sm:pt-10 pb-24 md:pb-28`}
     >
       {/* Título del paquete */}
-      <h1 className={`${textColor} text-lg xs:text-xl sm:text-2xl md:text-2xl font-extrabold`}>{title}</h1>
+      <h1
+        className={`${textColor} text-lg xs:text-xl sm:text-2xl md:text-2xl font-extrabold`}
+        style={{
+          fontSize: "clamp(1.5rem, 2vw + 0.5rem, 2.5rem)",
+          lineHeight: "1.55",
+        }}
+      >
+        {title}
+      </h1>
 
       {/* Descripción */}
       <div className="mt-3 xs:mt-4">
-        <p className={`${textColor} text-sm xs:text-base sm:text-lg md:text-2xl leading-relaxed`}>{description}</p>
+        <p
+          className={`${textColor} text-sm xs:text-base sm:text-lg md:text-xl leading-relaxed`}
+          style={{
+            fontSize: "clamp(1.25rem, 1.5vw + 0.5rem, 2rem)",
+            lineHeight: "1.55",
+          }}
+        >
+          {description}
+        </p>
       </div>
 
       {/* Información de precio y duración */}
-      <div className="mt-6 xs:mt-8 sm:mt-10 flex flex-col xs:flex-row w-full justify-between items-start xs:items-center space-y-3 xs:space-y-0">
+      <div className="absolute bottom-[30px] left-4 right-4 xs:left-6 xs:right-6 sm:left-8 sm:right-8 md:left-11 md:right-11 flex flex-col xs:flex-row justify-between items-start xs:items-center space-y-3 xs:space-y-0">
         <PriceDisplay price={price} textColor={textColor} />
         <TimeDisplay time={time} textColor={textColor} />
       </div>
@@ -147,7 +165,12 @@ function PriceDisplay({
           className="flex-shrink-0 absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] xs:w-5 xs:h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8"
         />
       </div>
-      <p className={`${textColor} text-base xs:text-lg sm:text-xl md:text-2xl font-extrabold`}>${price}</p>
+      <p
+        className={`${textColor} text-base xs:text-lg sm:text-xl md:text-2xl font-extrabold`}
+        style={{ fontSize: "clamp(1.5rem, 1.8vw + 0.5rem, 2.25rem)" }}
+      >
+        ${price}
+      </p>
     </div>
   );
 }
@@ -162,7 +185,12 @@ function TimeDisplay({ time, textColor }: { time: number; textColor: string }) {
         strokeWidth={2}
         className="flex-shrink-0 xs:w-6 xs:h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12"
       />
-      <p className={`${textColor} text-base xs:text-lg sm:text-xl md:text-2xl font-extrabold`}>{time} HOURS</p>
+      <p
+        className={`${textColor} text-base xs:text-lg sm:text-xl md:text-2xl font-extrabold`}
+        style={{ fontSize: "clamp(1.5rem, 1.8vw + 0.5rem, 2.25rem)" }}
+      >
+        {time} HOURS
+      </p>
     </div>
   );
 }

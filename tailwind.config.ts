@@ -13,6 +13,7 @@ export default {
       'md': '744px',   // Tablet
       'lg': '1080px',  // Desktop pequeño
       'xl': '1440px',  // Desktop grande
+      'xxl': '1700px',  // Desktop extra grande
     },
     extend: {
       colors: {
@@ -42,7 +43,7 @@ export default {
       },
       backgroundImage: {
         'hero': "url('/landing/bg.jpg')",
-        'fishing-01': "url('/landing/01.JPG')",
+        'fishing-01': "url('/landing/01.png')",
         'fishing-02': "url('/landing/02.jpeg')",
         'fishing-03': "url('/landing/03.JPG')",
       },

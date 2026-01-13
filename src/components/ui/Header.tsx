@@ -39,13 +39,13 @@ const Header = () => {
         <div className="flex flex-col md:flex-row justify-center md:justify-around items-center py-2 md:py-4 gap-4 md:gap-0">
           {/* Logo - Hidden on very small screens, visible from xs up */}
           <motion.div
-            className="hidden xs:block md:relative flex-shrink-0 md:top-9"
+            className="hidden xs:block md:relative flex-shrink-0 md:top-6 lg:top-8"
             variants={itemVariants}
           >
             <img
               src="/logo.png"
               alt="Hola Fishing Charters Logo"
-              className="h-20 xs:h-24 sm:h-32 md:h-40 lg:h-48 xl:h-56 object-contain mx-auto md:mx-0"
+              className="h-20 xs:h-24 sm:h-32 md:h-32 lg:h-44 xl:h-56 object-contain mx-auto md:mx-0"
             />
           </motion.div>
 
@@ -55,7 +55,9 @@ const Header = () => {
             variants={itemVariants}
           >
             <div className="flex flex-col md:flex-row justify-center md:justify-end items-center">
-              <motion.h1 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-bold">
+              <motion.h1
+                className="text-lg md:text-2xl lg:text-4xl xl:text-5xl xxl:text-5xl font-extrabold md:tracking-[.5px] xl:tracking-[.1px]"
+              >
                 <motion.span className="text-[#ED7D2F]">
                   HOLA FISHING
                 </motion.span>
@@ -65,8 +67,7 @@ const Header = () => {
               </motion.h1>
             </div>
             <motion.p
-              className="text-xs lg:text-lg xl:text-xl text-[#164765] font-bold"
-              style={{ letterSpacing: "1px" }}
+              className="text-base lg:text-2xl xl:text-3xl text-[#164765] font-extrabold xl:tracking-[.5px]"
             >
               LOCAL WATERS, LOCAL KNOWLEDGE, UNFORGETTABLE FUN.
             </motion.p>
