@@ -5,19 +5,12 @@ import { Card } from './Card';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-/**
- * Componente de sección de paquetes de pesca
- * Aplica el principio de Single Responsibility
- * 
- * @param packages - Lista de paquetes a mostrar
- * @returns JSX element con la sección de paquetes
- */
 export function PackagesSection({ packages }: PackagesProps): JSX.Element {
   const ref = useRef(null);
   const isInView = useInView(ref, { 
     once: true, 
     margin: "-50px",
-    amount: 0.1 
+    amount: 0.001 
   });
 
   const containerVariants = {

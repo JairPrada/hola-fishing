@@ -10,7 +10,7 @@ export function CaptainSection() {
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (latest) => {
-      if (latest > 0.1 && !shouldAnimate) {
+      if (latest > 0.01 && !shouldAnimate) {
         setShouldAnimate(true);
       }
     });
