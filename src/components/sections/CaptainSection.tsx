@@ -72,7 +72,7 @@ export function CaptainSection() {
         transition={{ duration: 0.5, delay: 0.1 }}
       >
         <h1
-          className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-bold text-[#174866] mt-10"
+          className="text-xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-bold text-[#174866] mt-20"
           style={{ fontSize: "clamp(1.75rem, 2.2vw + 0.4rem, 3rem)" }}
         >
           ADVENTURE PACKAGES
