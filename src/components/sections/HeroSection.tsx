@@ -11,7 +11,7 @@ export function HeroSection() {
 
   return (
     <motion.div
-      className="w-full bg-fishing-01 h-36 sm:h-[200px] border md:h-[450px] lg:h-[550px] xl:h-[600px] bg-cover bg-no-repeat bg-center"
+      className="w-full bg-fishing-11 h-36 sm:h-[200px] border md:h-[450px] lg:h-[550px] xl:h-[600px] bg-cover bg-no-repeat bg-center"
       style={{
         backgroundPosition: "center 40%",
         y,
