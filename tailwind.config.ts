@@ -43,7 +43,7 @@ export default {
       },
       backgroundImage: {
         'hero': "url('/landing/bg.jpg')",
-        'fishing-11': "url('/landing/11.png')",
+        'man': "url('/landing/man.png')",
         'fishing-01': "url('/landing/01.png')",
         'fishing-02': "url('/landing/02.jpeg')",
         'fishing-03': "url('/landing/03.JPG')",
