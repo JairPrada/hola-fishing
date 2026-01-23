@@ -38,18 +38,36 @@ export interface EmailConfiguration {
 /**
  * Factory para crear instancias de EmailService
  * Patrón Factory para fácil intercambio de servicios
+ * 
+ * Por defecto usa Gmail Nodemailer (gratis, sin restricciones)
+ * Para usar Brevo: EMAIL_PROVIDER=brevo en .env.local
  */
 export class EmailServiceFactory {
   private static instance: EmailService | null = null;
   
   public static getService(): EmailService {
     if (!EmailServiceFactory.instance) {
-      // Por defecto usa Brevo, pero se puede cambiar fácilmente
-      const { BrevoEmailService } = require('./BrevoEmailService');
-      EmailServiceFactory.instance = new BrevoEmailService();
+      const emailProvider = process.env.EMAIL_PROVIDER || 'gmail';
+      
+      console.log('[EmailServiceFactory] Initializing email service:', emailProvider);
+      console.log('[EmailServiceFactory] Environment check:', {
+        EMAIL_PROVIDER: process.env.EMAIL_PROVIDER,
+        GMAIL_EMAIL: process.env.GMAIL_EMAIL ? '✓ Set' : '✗ Missing',
+        GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD ? '✓ Set' : '✗ Missing',
+        BOOKING_RECIPIENT_EMAIL: process.env.BOOKING_RECIPIENT_EMAIL ? '✓ Set' : '✗ Missing'
+      });
+      
+      if (emailProvider === 'brevo') {
+        const { BrevoEmailService } = require('./BrevoEmailService');
+        EmailServiceFactory.instance = new BrevoEmailService();
+      } else {
+        // Gmail Nodemailer es el default
+        const { GmailNodemailerService } = require('./GmailNodemailerService');
+        EmailServiceFactory.instance = new GmailNodemailerService();
+      }
     }
     
-    return EmailServiceFactory.instance!; // Non-null assertion ya que se crea arriba
+    return EmailServiceFactory.instance!;
   }
   
   public static setService(service: EmailService): void {
